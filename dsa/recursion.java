@@ -1,19 +1,8 @@
 
 
 class Recursion {
-   static int ans=1;
-   public static int factorial(int n) {
-    if (n>0) {
-        factorial(n-1);
-        ans = ans*n;
-        return ans;
-    }
-    else{
-        return 1;
-    }
-   }
+    
     public static void main(String[] args) {
-       System.out.println( factorial(5));
     }
 }
 
@@ -113,4 +102,35 @@ class Recursion {
 //       return 0;
 //   }
    
+// }
+
+
+
+// static int ans=1;
+// public static int factorial(int n) {
+//  if (n>0) {
+//      factorial(n-1);
+//      ans = ans*n;
+//      return ans;
+//  }
+//  else{
+//      return 1;
+//  }
+// }
+
+
+// public static boolean isPowerOfTwo(int n) {
+//     // Base cases
+//     if (n == 1) {
+//         return true;
+//     }
+//     if (n <= 0) {
+//         return false;
+//     }
+//     // Recursive case
+//     if (n % 2 == 0) {
+//         return isPowerOfTwo(n / 2);
+//     } else {
+//         return false;
+//     }
 // }
