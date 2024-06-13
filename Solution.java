@@ -1,25 +1,93 @@
-
-import java.util.Arrays;
-
-
+import java.util.*;
 class Solution {
+    public static int missingNumber(int[] nums) {
 
-    public static void sortColors(int[] nums) {
-     
-        Arrays.sort(nums);
+      int ret = 0;
+
+      Arrays.sort(nums);
+
+      for (var i = 0; i < nums.length; i++) {
+       System.out.println(nums[i]);          
+      }
+        for (var i = 1; i < nums.length-1; i++) {
+        if(nums[i]!=nums[i+1]+1){
+           ret = nums[i]+1;
+        }  
+      }
+      return ret;
+    }
+    
+    public static void main(String args[]){
+      System.out.println("hello");
+      int arr[] = {2,3,1,5,6,7,8,9};
+      
+      System.out.println("missing "+missingNumber(arr));
     }
 
-    public static void main(String[] args) {
-        int arr[] = {1, 2, 1, 1, 2, 0, 0};
-        sortColors(arr);
-        for (int i = 0; i < arr.length; i++) {
-            System.out.println(arr[i]);
-        }
-    }
 }
 
 
+// class Solution {
 
+//     public static void moveZeroes(int[] nums) {
+//         int i = 0, j = 0, k = 0;
+
+//         while (i < nums.length) {
+//             if (nums[i] == 0) {
+//                 j++;
+//             } else {
+//                 nums[k++] = nums[i];
+//             }
+//             i++;
+//         }
+
+//         while (j > 0) {
+//             nums[k++] = 0;
+//             j--;
+//         }
+//     }
+
+//     public static void main(String[] args) {
+//         int arr[] = {1, 2, 0, 5, 0, 0, 1, 9, 0};
+//         moveZeroes(arr);
+//         for (var i = 0; i < arr.length; i++) {
+//               System.out.println(arr[i]);            
+//         }
+//     }
+// }
+
+// class Solution {
+//     public static void moveZeroes(int[] nums) {
+//         for (var j = 0; j < nums.length/2; j++) {
+//             for (var i = 0; i < nums.length-1; i++) {
+//                 if (nums[i] == 0 ) {
+//                     int temp = nums[i];
+//                     nums[i] = nums[i + 1];
+//                     nums[i + 1] = temp;
+//                 }
+//             }            
+//         }
+//         for (var i = 0; i < nums.length; i++) {
+//             System.out.println(nums[i]);
+//         }
+//     }
+//     // public static void main(String[] args) {
+//     //     int arr[] = {1, 2, 0, 5, 0, 0, 1, 9, 0};
+//     //     moveZeroes(arr);
+//     // }
+// }
+// class Solution {
+//     public static void sortColors(int[] nums) {
+//         Arrays.sort(nums);
+//     }
+//     public static void main(String[] args) {
+//         int arr[] = {1, 2, 1, 1, 2, 0, 0};
+//         sortColors(arr);
+//         for (int i = 0; i < arr.length; i++) {
+//             System.out.println(arr[i]);
+//         }
+//     }
+// }
 // for (var i = 0; i < nums.length; i++) {
 //     int max = nums[i];
 //     for (var j = i; j < nums.length; j++) {
@@ -30,8 +98,6 @@ class Solution {
 //         }
 //     }
 // }
-
-
 // import java.util.HashSet;
 // import java.util.Set;
 // class Solution {
@@ -88,6 +154,4 @@ class Solution {
 //     int arr[] = {1, 2, 3, 4, 5, 6, 7, 8};
 //     rotate(arr, 4);
 // }
-
-
 
