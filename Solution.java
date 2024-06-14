@@ -1,37 +1,102 @@
+
 import java.util.*;
+
 class Solution {
-    public static int missingNumber(int[] nums) {
 
-      int ret = 0;
+    public int singleNumber(int[] nums) {
+        int ans = 0;
+        Arrays.sort(nums);
+        for (var i = 0; i < nums.length; i++) {
 
-      Arrays.sort(nums);
-
-      for (var i = 0; i < nums.length; i++) {
-       System.out.println(nums[i]);          
-      }
-        for (var i = 1; i < nums.length-1; i++) {
-        if(nums[i]!=nums[i+1]+1){
-           ret = nums[i]+1;
-        }  
-      }
-      return ret;
+            if (i == nums.length - 1) {
+                ans = nums[i];
+                break;
+            }
+            if (nums[i] != nums[i + 1]) {
+                ans = nums[i];
+                break;
+            }
+            i++;
+        }
+        return ans;
     }
-    
-    public static void main(String args[]){
-      System.out.println("hello");
-      int arr[] = {2,3,1,5,6,7,8,9};
-      
-      System.out.println("missing "+missingNumber(arr));
-    }
-
 }
 
-
 // class Solution {
-
+//   public int findMaxConsecutiveOnes(int[] nums) {
+//     int max = 0;
+//     int count =0;
+//    for (var i = 0; i < nums.length; i++) {
+//       if (nums[i]==1) {
+//           count++;
+//           if (count>max) {
+//               max = count;
+//           }
+//       }else if(nums[i]!=1){
+//           count = 0;
+//       }
+//    }
+//     return  max;
+//   }
+// }
+// import java.util.*;
+// class Solution {
+//     public int minIncrementForUnique(int[] nums) {
+//         int count = 0;
+//         Arrays.sort(nums);
+//         for (var i = 1; i < nums.length - 1; i++) {
+//             if (nums[i] == nums[i + 1]) {
+//                 nums[i + 1]++;
+//                 count++;
+//             }
+//         }
+//         return count;
+//     }
+// }
+// import java.util.*;
+// class Solution {
+//     //Function to return a list containing the union of the two arrays.
+//     public static ArrayList<Integer> findUnion(int arr1[], int arr2[], int n, int m) {
+//         ArrayList<Integer> list = new ArrayList<>();
+//         Set<Integer> s = new HashSet<>();
+//         for (var i = 0; i < arr1.length; i++) {
+//             s.add(arr1[i]);
+//         }
+//         for (var i = 0; i < arr2.length; i++) {
+//             s.add(arr2[i]);
+//         }
+//         s.toArray();
+//         for (var i = 0; i < s.size(); i++) {
+//             list.add((int) s.toArray()[i]);
+//         }
+//         return list;
+//     }
+// }
+// import java.util.*;
+// class Solution {
+//     public static int missingNumber(int[] nums) {
+//       int ret = 0;
+//       Arrays.sort(nums);
+//       for (var i = 0; i < nums.length; i++) {
+//        System.out.println(nums[i]);          
+//       }
+//         for (var i = 1; i < nums.length-1; i++) {
+//         if(nums[i]!=nums[i+1]+1){
+//            ret = nums[i]+1;
+//         }  
+//       }
+//       return ret;
+//     }
+//     public static void main(String args[]){
+//       System.out.println("hello");
+//       int arr[] = {2,3,1,5,6,7,8,9};
+//       System.out.println(".()");
+//       System.out.println("missing "+missingNumber(arr));
+//     }
+// }
+// class Solution {
 //     public static void moveZeroes(int[] nums) {
 //         int i = 0, j = 0, k = 0;
-
 //         while (i < nums.length) {
 //             if (nums[i] == 0) {
 //                 j++;
@@ -40,13 +105,11 @@ class Solution {
 //             }
 //             i++;
 //         }
-
 //         while (j > 0) {
 //             nums[k++] = 0;
 //             j--;
 //         }
 //     }
-
 //     public static void main(String[] args) {
 //         int arr[] = {1, 2, 0, 5, 0, 0, 1, 9, 0};
 //         moveZeroes(arr);
@@ -55,7 +118,6 @@ class Solution {
 //         }
 //     }
 // }
-
 // class Solution {
 //     public static void moveZeroes(int[] nums) {
 //         for (var j = 0; j < nums.length/2; j++) {
