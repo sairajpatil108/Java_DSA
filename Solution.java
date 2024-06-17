@@ -1,27 +1,119 @@
-
-import java.util.*;
-
 class Solution {
-
-    public int singleNumber(int[] nums) {
-        int ans = 0;
-        Arrays.sort(nums);
-        for (var i = 0; i < nums.length; i++) {
-
-            if (i == nums.length - 1) {
-                ans = nums[i];
-                break;
-            }
-            if (nums[i] != nums[i + 1]) {
-                ans = nums[i];
-                break;
-            }
-            i++;
+    public int search(int[] nums, int target) {
+        int start = 0;
+        int end = nums.length;
+        
+        if (target > nums[nums.length/2]) {
+            
         }
-        return ans;
     }
 }
 
+// class Solution {
+//     public int maxProfit(int[] prices) {
+//         int max = 0;
+//         for (int i = 0; i < prices.length; i++) {
+//             for (int j = i; j < prices.length; j++) {
+//                 if ((prices[j]-prices[i])> max) {
+//                     max = prices[j]-prices[i];
+//                 }
+//             }
+//         }
+//        return max;
+//     }
+// }
+
+
+
+// class Solution {
+
+//     public int maxSubArray(int[] nums) {
+//         int max = 0;
+
+//         for (int i = 0; i < nums.length; i++) {
+//             for (int j = i; j < nums.length; j++) {
+//                 if (sum1(nums, i, j) > max) {
+//                     max = sum1(nums, i, j);
+//                 }
+//             }
+//         }
+//         return max;
+//     }
+
+//     public int sum1(int arr[], int s, int e) {
+//         int sumx = 0;
+//         for (int i = s; i < e; i++) {
+//             sumx = sumx + arr[i];
+//         }
+//         return sumx;
+//     }
+// }
+
+// class Solution {
+//     public static int lenOfLongSubarr(int A[], int N, int K) {
+//         int max = 0;
+//         for (int idx = 0; idx < A.length; idx++) {
+//             for (int idxb = idx; idxb < A.length; idxb++) {
+//                 if (sum(A , idx, idxb) == K) {
+//                     if (idxb - idx > max) {
+//                         max = idxb - idx;
+//                     }
+//                 }
+//             }
+//         }
+//         return max;
+//     }
+//     public static int sum(int arr[] , int i, int j) {
+//         int sum = 0;
+//         for (int idx = i; idx < j; idx++) {
+//             sum = sum + arr[idx];
+//         }
+//         return sum;
+//     }
+// }
+// class Solution {
+//     public boolean judgeSquareSum(int c) {
+//         boolean s = false;
+//         if (c == 1 || c == 0) {
+//             s = true;
+//         }
+//        double start = 0;
+//        double end = Math.sqrt(c);
+//        for (double i = start; i < end ; i++) {
+//           for (double j = start; j < end; j++) {
+//             if ((i*i)+(j*j) < c) {
+//                 start = (i*i)+(j*j);
+//                 break;
+//             }
+//             if ((i*i)+(j*j) < c) {
+//                 end = (i*i)+(j*j);
+//                 break;
+//             }
+//             if ((i*i)+(j*j) == c) {
+//                 s = true;  
+//             }
+//           }
+//        }
+//         return s;
+//     }
+// }
+// import java.util.*;
+// class Solution {
+//     public int singleNumber(int[] nums) {
+//         int ans = 0;
+//         for (var i = 0; i < nums.length; i++) {
+//             if (i == nums.length - 1) {
+//                 ans = nums[i];
+//                 break;
+//             }
+//             if (nums[i] != nums[i + 1]) {
+//                 ans = nums[i];
+//                 break;
+//             }
+//             i++;
+//         }
+//         return ans;
+// }
 // class Solution {
 //   public int findMaxConsecutiveOnes(int[] nums) {
 //     int max = 0;
