@@ -1,14 +1,84 @@
+
 class Solution {
-    public int search(int[] nums, int target) {
-        int start = 0;
-        int end = nums.length;
-        
-        if (target > nums[nums.length/2]) {
-            
+
+    public static int[] rearrangeArray(int[] nums) {
+        int pos[] = new int[nums.length / 2];
+        int neg[] = new int[nums.length / 2];
+        int a = 0;
+        int b = 0;
+
+        int c = 0;
+        int d = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] > 0) {
+                pos[a] = nums[i];
+                a++;
+            } else if (nums[i] < 0) {
+                neg[b] = nums[i];
+                b++;
+            }
         }
+
+        for (int i = 0; i < nums.length; i++) {
+            if (i % 2 == 0) {
+                nums[i] = pos[c];
+                c++;
+            } else {
+                nums[i] = neg[d];
+                d++;
+            }
+
+        }
+
+        return nums;
+    }
+
+    public static void main(String[] args) {
+        int pr[] = {1, -12, -4, 5, 23, -4, -16, 1};
+        rearrangeArray(pr);
     }
 }
 
+// for (int i = 0; i < prices.length; i++) {
+//     for (int j = i + 1; j < prices.length; j++) {
+//         if (max < (prices[j] - prices[i])) {
+//             max = (prices[j] - prices[i]);
+//         }
+//     }
+// }
+// class Solution {
+//     public static int search(int[] nums, int target) {
+//         int left = 0;
+//         int right = nums.length;
+//         while (left <= right) {
+//             int mid = (left + right) / 2;
+//             if (nums[mid] == target) {
+//                 return mid;
+//             }
+//             if (nums[mid] > target) {
+//                 right = mid;
+//             }
+//             if (nums[mid] <= target) {
+//                 left = mid;
+//             } 
+//         }
+//         return -1;
+//     }
+//     public static void main(String[] args) {
+//         int s = 10;
+//         int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12};
+//         System.out.println(search(arr, s));
+//     }
+// }
+// class Solution {
+//     public int search(int[] nums, int target) {
+//         int start = 0;
+//         int end = nums.length;
+//         if (target > nums[nums.length/2]) {
+//         }
+//     }
+// }
 // class Solution {
 //     public int maxProfit(int[] prices) {
 //         int max = 0;
@@ -22,14 +92,9 @@ class Solution {
 //        return max;
 //     }
 // }
-
-
-
 // class Solution {
-
 //     public int maxSubArray(int[] nums) {
 //         int max = 0;
-
 //         for (int i = 0; i < nums.length; i++) {
 //             for (int j = i; j < nums.length; j++) {
 //                 if (sum1(nums, i, j) > max) {
@@ -39,7 +104,6 @@ class Solution {
 //         }
 //         return max;
 //     }
-
 //     public int sum1(int arr[], int s, int e) {
 //         int sumx = 0;
 //         for (int i = s; i < e; i++) {
@@ -48,7 +112,6 @@ class Solution {
 //         return sumx;
 //     }
 // }
-
 // class Solution {
 //     public static int lenOfLongSubarr(int A[], int N, int K) {
 //         int max = 0;
