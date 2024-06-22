@@ -1,45 +1,95 @@
-
 class Solution {
-
-    public static int[] rearrangeArray(int[] nums) {
-        int pos[] = new int[nums.length / 2];
-        int neg[] = new int[nums.length / 2];
-        int a = 0;
-        int b = 0;
-
-        int c = 0;
-        int d = 0;
-
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] > 0) {
-                pos[a] = nums[i];
-                a++;
-            } else if (nums[i] < 0) {
-                neg[b] = nums[i];
-                b++;
-            }
-        }
-
-        for (int i = 0; i < nums.length; i++) {
-            if (i % 2 == 0) {
-                nums[i] = pos[c];
-                c++;
-            } else {
-                nums[i] = neg[d];
-                d++;
-            }
-
-        }
-
-        return nums;
-    }
-
-    public static void main(String[] args) {
-        int pr[] = {1, -12, -4, 5, 23, -4, -16, 1};
-        rearrangeArray(pr);
+    public int missingNumber(int[] nums) {
+        
     }
 }
 
+
+// class Solution {
+
+//     public int numberOfSubarrays(int[] nums, int k) {
+//         int count = 0;
+
+//         for (int i = 0; i < nums.length; i++) {
+//             if (nums[i] % 2 == 0) {
+//                 nums[i] = 0;
+//             } else {
+//                 nums[i] = 1;
+//             }
+//         }
+
+//         for (int i = 0; i < nums.length; i++) {
+//             int sum = 0;
+//              for (int j = i; j < nums.length; j++) {
+//                  sum = sum + nums[j];
+//              }
+//              if(sum==k){
+//                 count++;
+//              }
+//         }
+//         return count;
+//     }
+// }
+
+// class Solution {
+//     public int numSubarraysWithSum(int[] nums, int goal) {
+//         int count = 0;
+//         for (int i = 0; i < nums.length; i++) {
+//             int sum = 0;
+//             for (int j = i; j < nums.length; j++) {
+//                 for (int K = i; K < j; K++) {
+//                     sum = sum + nums[K];
+//                 }
+//                 if (sum == goal) {
+//                     count ++;
+//                 }
+//             }
+//         }
+//         return count;
+//     }
+// }
+// class Solution {
+//     public int maxSatisfied(int[] customers, int[] grumpy, int minutes) {
+//         int sol = 0;
+//         for (int i = 0; i < minutes; i++) {
+//             sol = sol + (customers[i]*grumpy[i]);
+//         }
+//         return sol;
+//     }
+// }
+// class Solution {
+//     public static int[] rearrangeArray(int[] nums) {
+//         int pos[] = new int[nums.length / 2];
+//         int neg[] = new int[nums.length / 2];
+//         int a = 0;
+//         int b = 0;
+//         int c = 0;
+//         int d = 0;
+//         for (int i = 0; i < nums.length; i++) {
+//             if (nums[i] > 0) {
+//                 pos[a] = nums[i];
+//                 a++;
+//             } else if (nums[i] < 0) {
+//                 neg[b] = nums[i];
+//                 b++;
+//             }
+//         }
+//         for (int i = 0; i < nums.length; i++) {
+//             if (i % 2 == 0) {
+//                 nums[i] = pos[c];
+//                 c++;
+//             } else {
+//                 nums[i] = neg[d];
+//                 d++;
+//             }
+//         }
+//         return nums;
+//     }
+//     public static void main(String[] args) {
+//         int pr[] = {1, -12, -4, 5, 23, -4, -16, 1};
+//         rearrangeArray(pr);
+//     }
+// }
 // for (int i = 0; i < prices.length; i++) {
 //     for (int j = i + 1; j < prices.length; j++) {
 //         if (max < (prices[j] - prices[i])) {
