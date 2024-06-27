@@ -1,8 +1,54 @@
 class Solution {
-    public int missingNumber(int[] nums) {
-        
+    public int mySqrt(int x) {
+     int start = 0;
+     int end = x;
+
+     while (end>start) { 
+            int mid = start + end;
+            if (mid*mid == x || x%mid<mid ) {
+               return mid; 
+            }
+            if (mid*mid>x) {
+                end = mid;
+            }
+            if (mid*mid<x) {
+                start = mid;
+            }
+     }
+     return -1;      
     }
 }
+
+
+
+
+
+// class Solution {
+//     public static int missingNumber(int[] nums) {
+//         int n = nums.length;
+//         boolean[] hash = new boolean[n + 1]; // Accommodate all numbers from 0 to n
+
+//         // Mark present numbers
+//         for (int num : nums) {
+//             hash[num] = true;
+//         }
+
+//         // Find the missing number
+//         for (int i = 0; i <= n; i++) {
+//             if (!hash[i]) {
+//                 return i;
+//             }
+//         }
+
+//         return 0; // This line will never be reached
+//     }
+
+//     public static void main(String[] args) {
+//         int arr[] = {0,1,2,4,5,6,7,8,9};
+
+//         System.out.println(missingNumber(arr));
+//     }
+// }
 
 
 // class Solution {
@@ -163,7 +209,7 @@ class Solution {
 //     }
 // }
 // class Solution {
-//     public static int lenOfLongSubarr(int A[], int N, int K) {
+//     public static int lenOfdoubleSubarr(int A[], int N, int K) {
 //         int max = 0;
 //         for (int idx = 0; idx < A.length; idx++) {
 //             for (int idxb = idx; idxb < A.length; idxb++) {
