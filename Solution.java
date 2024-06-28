@@ -1,23 +1,27 @@
-class Solution {
-    public int mySqrt(int x) {
-     int start = 0;
-     int end = x;
 
-     while (end>start) { 
-            int mid = start + end;
-            if (mid*mid == x || x%mid<mid ) {
-               return mid; 
-            }
-            if (mid*mid>x) {
-                end = mid;
-            }
-            if (mid*mid<x) {
-                start = mid;
-            }
-     }
-     return -1;      
-    }
-}
+// class Solution {
+//     public int mySqrt(int x) {
+//      int start = 0;
+//      int end = x;
+
+
+//      while (end>start) { 
+//             int mid = start + end;
+//             if (mid*mid == x || x%mid<mid ) {
+//                return mid; 
+//             }
+//             if (mid*mid>x) {
+//                 end = mid;
+//             }
+//             if (mid*mid<x) {
+//                 start = mid;
+//             }
+//      }
+//      return -1;      
+//     }
+// }
+
+
 
 
 
