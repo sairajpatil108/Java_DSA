@@ -1,10 +1,28 @@
 
+class Solution {
+
+    public boolean threeConsecutiveOdds(int[] arr) {
+        boolean ans = false;
+        int count = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 != 0) {
+                count++;
+                if (count >= 3) {
+                    ans = true;
+                }
+            } else {
+                count = 0;
+            }
+        }
+        return ans;
+    }
+}
+
 // class Solution {
 //     public int mySqrt(int x) {
 //      int start = 0;
 //      int end = x;
-
-
 //      while (end>start) { 
 //             int mid = start + end;
 //             if (mid*mid == x || x%mid<mid ) {
@@ -20,40 +38,30 @@
 //      return -1;      
 //     }
 // }
-
 // class Solution {
 //     public static int missingNumber(int[] nums) {
 //         int n = nums.length;
 //         boolean[] hash = new boolean[n + 1]; // Accommodate all numbers from 0 to n
-
 //         // Mark present numbers
 //         for (int num : nums) {
 //             hash[num] = true;
 //         }
-
 //         // Find the missing number
 //         for (int i = 0; i <= n; i++) {
 //             if (!hash[i]) {
 //                 return i;
 //             }
 //         }
-
 //         return 0; // This line will never be reached
 //     }
-
 //     public static void main(String[] args) {
 //         int arr[] = {0,1,2,4,5,6,7,8,9};
-
 //         System.out.println(missingNumber(arr));
 //     }
 // }
-
-
 // class Solution {
-
 //     public int numberOfSubarrays(int[] nums, int k) {
 //         int count = 0;
-
 //         for (int i = 0; i < nums.length; i++) {
 //             if (nums[i] % 2 == 0) {
 //                 nums[i] = 0;
@@ -61,7 +69,6 @@
 //                 nums[i] = 1;
 //             }
 //         }
-
 //         for (int i = 0; i < nums.length; i++) {
 //             int sum = 0;
 //              for (int j = i; j < nums.length; j++) {
@@ -74,7 +81,6 @@
 //         return count;
 //     }
 // }
-
 // class Solution {
 //     public int numSubarraysWithSum(int[] nums, int goal) {
 //         int count = 0;
