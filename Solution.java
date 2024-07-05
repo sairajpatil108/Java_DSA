@@ -1,24 +1,157 @@
 
-class Solution {
+import java.util.*;
+//   Definition for singly-linked list.
 
-    public boolean threeConsecutiveOdds(int[] arr) {
-        boolean ans = false;
-        int count = 0;
+class ListNode {
 
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] % 2 != 0) {
-                count++;
-                if (count >= 3) {
-                    ans = true;
-                }
-            } else {
-                count = 0;
-            }
-        }
-        return ans;
+    int val;
+    ListNode next;
+
+    ListNode() {
+    }
+
+    ListNode(int val) {
+        this.val = val;
+    }
+
+    ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
     }
 }
 
+class Solution {
+
+    public ListNode reverseList(ListNode head) {
+        Stack<Integer> MyStack = new Stack();
+        ListNode temp = head;
+
+        while (temp.next != null) {
+            MyStack.push(temp.val);
+            temp = temp.next;
+        }
+        temp = head;
+
+        while (temp.next != null) {
+            temp.val = MyStack.pop();
+            temp = temp.next;
+        }
+        
+        return temp;
+
+    }
+}
+
+// //   Definition for singly-linked list.
+//    class ListNode {
+//       int val;
+//       ListNode next;
+//       ListNode() {}
+//       ListNode(int val) { this.val = val; }
+//       ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+//   }
+// class Solution {
+//     public ListNode middleNode(ListNode head) {
+//         ListNode temp = head;
+//         int length =0;
+//         while(temp.next!=null){
+//             length++;
+//             temp = temp.next;
+//         }
+//         int mid = (length + 1)/2;
+//         for (int i = 0; i < mid; i++) {
+//             head = head.next;
+//         }
+//  return head;
+//     }
+// }
+// //  Definition for singly-linked list.
+// class ListNode {
+//     int val;
+//     ListNode next;
+//     ListNode() {
+//     }
+//     ListNode(int val) {
+//         this.val = val;
+//     }
+//     ListNode(int val, ListNode next) {
+//         this.val = val;
+//         this.next = next;
+//     }
+// }
+// class Solution {
+//     public ListNode mergeNodes(ListNode head) {
+//         ListNode newHead = new ListNode();
+//         ListNode temp1 = newHead;
+//         ListNode temp2 = head;
+//         while (head.next.val != 0) {
+//             int sum = 0;
+//             while (temp2.next.val != 0) {
+//                 sum = sum + temp2.val;
+//             }
+//             temp1.val = sum;
+//             temp1 = temp1.next;
+//             head = head.next;
+//         }
+//         return temp1;
+//     }
+// }
+// import java.util.Arrays;
+// class Solution {
+//     public int minDifference(int[] nums) {
+//         if (nums.length <= 4) {
+//             return 0;
+//         }
+//         int count = 3;
+//         Arrays.sort(nums);
+//         return 0;
+//     }
+// }
+// import java.util.*;
+// class Solution {
+//     public int[] intersect(int[] nums1, int[] nums2) {
+//         ArrayList<Integer> resultList = new ArrayList<>();
+//         // Sort both arrays
+//         Arrays.sort(nums1);
+//         Arrays.sort(nums2);
+//         int i = 0, j = 0;
+//         // Use two pointers to find the intersection
+//         while (i < nums1.length && j < nums2.length) {
+//             if (nums1[i] == nums2[j]) {
+//                 resultList.add(nums1[i]);
+//                 i++;
+//                 j++;
+//             } else if (nums1[i] < nums2[j]) {
+//                 i++;
+//             } else {
+//                 j++;
+//             }
+//         }
+//         // Convert resultList to an array
+//         int[] result = new int[resultList.size()];
+//         for (int k = 0; k < result.length; k++) {
+//             result[k] = resultList.get(k);
+//         }
+//         return result;
+//     }
+// }
+// class Solution {
+//     public boolean threeConsecutiveOdds(int[] arr) {
+//         boolean ans = false;
+//         int count = 0;
+//         for (int i = 0; i < arr.length; i++) {
+//             if (arr[i] % 2 != 0) {
+//                 count++;
+//                 if (count >= 3) {
+//                     ans = true;
+//                 }
+//             } else {
+//                 count = 0;
+//             }
+//         }
+//         return ans;
+//     }
+// }
 // class Solution {
 //     public int mySqrt(int x) {
 //      int start = 0;
