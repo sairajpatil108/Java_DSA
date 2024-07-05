@@ -1,46 +1,108 @@
 
-import java.util.*;
-//   Definition for singly-linked list.
+//  Definition for singly-linked list.
+  class ListNode {
+      int val;
+      ListNode next;
+      ListNode(int x) {
+          val = x;
+          next = null;
+      }
+ }
 
-class ListNode {
 
-    int val;
-    ListNode next;
-
-    ListNode() {
-    }
-
-    ListNode(int val) {
-        this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-}
-
-class Solution {
-
-    public ListNode reverseList(ListNode head) {
-        Stack<Integer> MyStack = new Stack();
+public class Solution {
+    public ListNode detectCycle(ListNode head) {
         ListNode temp = head;
+        int dummy = -876879546;
 
-        while (temp.next != null) {
-            MyStack.push(temp.val);
-            temp = temp.next;
+        while (temp != null) {
+            if (temp.val == dummy) {
+                return temp;
+            } else {
+                temp.val = dummy;
+                temp = temp.next;
+            }
         }
-        temp = head;
-
-        while (temp.next != null) {
-            temp.val = MyStack.pop();
-            temp = temp.next;
-        }
-        
-        return temp;
-
+        return null;
     }
 }
+
+
+
+
+//  // Definition for singly-linked list.
+// class ListNode {
+//       int val;
+//       ListNode next;
+//       ListNode(int x) {
+//           val = x;
+//           next = null;
+//      }
+//   }
+ 
+// public class Solution {
+//     public boolean hasCycle(ListNode head) {
+//         boolean ans = false;
+//         int dummy = -876879546;
+//         ListNode temp = head;
+//         while(temp !=  null){
+//             if (temp.val == dummy){
+//                 ans = true;
+//                 break;
+//             } else
+//             {
+//                 temp.val = dummy;
+//                 temp = temp.next;
+//             }
+//         }
+//         return ans;
+//     }
+// }
+
+
+
+// import java.util.*;
+// //   Definition for singly-linked list.
+
+// class ListNode {
+
+//     int val;
+//     ListNode next;
+
+//     ListNode() {
+//     }
+
+//     ListNode(int val) {
+//         this.val = val;
+//     }
+
+//     ListNode(int val, ListNode next) {
+//         this.val = val;
+//         this.next = next;
+//     }
+// }
+
+// class Solution {
+
+//     public ListNode reverseList(ListNode head) {
+//         Stack<Integer> MyStack = new Stack();
+//         ListNode temp = head;
+
+//         while (temp.next != null) {
+//             MyStack.push(temp.val);
+//             temp = temp.next;
+//         }
+//         temp = head;
+
+//         while (temp.next != null) {
+//             temp.val = MyStack.pop();
+//             temp = temp.next;
+//         }
+        
+//         return temp;
+
+//     }
+// }
 
 // //   Definition for singly-linked list.
 //    class ListNode {
