@@ -1,31 +1,45 @@
 
-//  Definition for singly-linked list.
-  class ListNode {
-      int val;
-      ListNode next;
-      ListNode(int x) {
-          val = x;
-          next = null;
-      }
- }
+class Solution {
+    public int passThePillow(int n, int time) {
+        int count = time % n;
+        int ans = 0;
 
-
-public class Solution {
-    public ListNode detectCycle(ListNode head) {
-        ListNode temp = head;
-        int dummy = -876879546;
-
-        while (temp != null) {
-            if (temp.val == dummy) {
-                return temp;
-            } else {
-                temp.val = dummy;
-                temp = temp.next;
-            }
+        while(count!=0){
+          ans++;
+          count--;
         }
-        return null;
+        return ans;
     }
 }
+
+
+// //  Definition for singly-linked list.
+//   class ListNode {
+//       int val;
+//       ListNode next;
+//       ListNode(int x) {
+//           val = x;
+//           next = null;
+//       }
+//  }
+
+
+// public class Solution {
+//     public ListNode detectCycle(ListNode head) {
+//         ListNode temp = head;
+//         int dummy = -876879546;
+
+//         while (temp != null) {
+//             if (temp.val == dummy) {
+//                 return temp;
+//             } else {
+//                 temp.val = dummy;
+//                 temp = temp.next;
+//             }
+//         }
+//         return null;
+//     }
+// }
 
 
 
