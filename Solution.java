@@ -1,18 +1,56 @@
 
-class Solution {
-    public int passThePillow(int n, int time) {
-        int count = time % n;
-        int ans = 0;
+import java.util.*;
 
-        while(count!=0){
-          ans++;
-          count--;
+class Solution {
+
+  public int minOperations(String[] logs) {
+    Stack<String> st = new Stack<>();
+
+    for (int i = 0; i < logs.length; i++) {
+        switch (logs[i]) {
+            case "../":
+                if (!st.isEmpty()) {
+                    st.pop();
+                }
+                break;
+            case "./":
+                break;
+            default:
+                st.push(logs[i]);
+                break;
         }
-        return ans;
     }
+    return st.size();
+}
 }
 
-
+// class Solution {
+//   public int numWaterBottles(int numBottles, int numExchange) {
+//     int buffer = 0;
+//     int count = numBottles;
+//       while(numBottles > 0){
+//         count = count + (numBottles / numExchange) ; 
+//         buffer = buffer + (numBottles%numExchange);
+//         numBottles = numBottles/numExchange;
+//       }
+//     while(buffer>numExchange){
+//       count = count + (buffer/numExchange);
+//       buffer = buffer%numExchange;
+//     } 
+//     return count;
+//   }
+// }
+// class Solution {
+//     public int passThePillow(int n, int time) {
+//         int count = time % n;
+//         int ans = 0;
+//         while(count!=0){
+//           ans++;
+//           count--;
+//         }
+//         return ans;
+//     }
+// }
 // //  Definition for singly-linked list.
 //   class ListNode {
 //       int val;
@@ -22,13 +60,10 @@ class Solution {
 //           next = null;
 //       }
 //  }
-
-
 // public class Solution {
 //     public ListNode detectCycle(ListNode head) {
 //         ListNode temp = head;
 //         int dummy = -876879546;
-
 //         while (temp != null) {
 //             if (temp.val == dummy) {
 //                 return temp;
@@ -40,10 +75,6 @@ class Solution {
 //         return null;
 //     }
 // }
-
-
-
-
 //  // Definition for singly-linked list.
 // class ListNode {
 //       int val;
@@ -53,7 +84,6 @@ class Solution {
 //           next = null;
 //      }
 //   }
- 
 // public class Solution {
 //     public boolean hasCycle(ListNode head) {
 //         boolean ans = false;
@@ -72,52 +102,37 @@ class Solution {
 //         return ans;
 //     }
 // }
-
-
-
 // import java.util.*;
 // //   Definition for singly-linked list.
-
 // class ListNode {
-
 //     int val;
 //     ListNode next;
-
 //     ListNode() {
 //     }
-
 //     ListNode(int val) {
 //         this.val = val;
 //     }
-
 //     ListNode(int val, ListNode next) {
 //         this.val = val;
 //         this.next = next;
 //     }
 // }
-
 // class Solution {
-
 //     public ListNode reverseList(ListNode head) {
 //         Stack<Integer> MyStack = new Stack();
 //         ListNode temp = head;
-
 //         while (temp.next != null) {
 //             MyStack.push(temp.val);
 //             temp = temp.next;
 //         }
 //         temp = head;
-
 //         while (temp.next != null) {
 //             temp.val = MyStack.pop();
 //             temp = temp.next;
 //         }
-        
 //         return temp;
-
 //     }
 // }
-
 // //   Definition for singly-linked list.
 //    class ListNode {
 //       int val;
